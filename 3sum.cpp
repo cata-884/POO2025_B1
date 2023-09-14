@@ -19,7 +19,6 @@ void afiseaza_triplete(int n) {
         cout << "nu exista" << endl;
     }
 }
-
 int main() {
     int n;
     cout << "Introduceti un numar natural n: ";
@@ -27,3 +26,17 @@ int main() {
     afiseaza_triplete(n);
     return 0;
 }
+//edit pentru ca cum drq ar trebui sa stiu asta
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+    if(n%6==0) cout<<n/6<<" "<<n/3<<" "<<n/2;
+    else cout<<"nu exista";
+    return 0;
+}
+*/
