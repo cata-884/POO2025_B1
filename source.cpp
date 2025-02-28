@@ -11,10 +11,10 @@ int main(int argc, char* argv[])
     char input[11] = "-*++/-++-*-";
     func Operatori[4] = {Sum, Dif, Mul, Div};
     int S=0, V; // nu se intampla nimic cu V; S nu are o valoare explicita => primeste dummy value
-    Content x;
-    double idx;
+    Content x = {0, 0};
+    int idx;
 
-    for (i = 0; i < strlen(input); i++)
+    for (int i = 0; i < strlen(input); i++)
     {
         switch (input[i] - 42)
         {
@@ -22,25 +22,31 @@ int main(int argc, char* argv[])
                 idx = 0;
                 x.p1 = 7;
                 x.p2 = 5;
+                break;
             case DIFERENTA:
                 idx = 1;
                 x.p1 = 10;
                 x.p2 = 1;
+                break;
             case INMULTIRE:
                 idx = 2;
                 x.p1 = 3;
                 x.p2 = 3;
+                break;
             case IMPARTIRE:
                 idx = 3;
                 x.p1 = 8;
                 x.p2 = 4;
+                break;
+            default:
+                continue;
         }
 
         S = S + Operatori[idx](x.p1, x.p2);
     }
 
     //S=133
-    printf("S = %c\n", S);
+    printf("S = %d\n", S);
 
     return 0;
 }
