@@ -3,7 +3,7 @@
 int Sum(int a, float b) { return a + b; }
 int Dif(char a, int b) { return a - b; }
 int Mul(long a, int b) { return a * b; }
-char Div(int a, int b) { return a / b; }
+int Div(int a, int b) { return a / b; }
 
 int main(int argc, char* argv[])
 {
