@@ -22,7 +22,7 @@ int Movie::get_year() {
 }
 
 void Movie::set_score(double n) {
-    this->IMDB_score = n;
+    if(n>=0 && n<=10) this->IMDB_score = n;
 }
 
 double Movie::get_score() {
