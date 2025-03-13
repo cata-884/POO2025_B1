@@ -47,36 +47,39 @@ int Math::Add(int count, ...) {
     va_end(args);
     return s;
 }
-int getSize(int n) {
-    int s = 0;
-    while(n) {
-        s++;
-        n/=10;
-    }
-    return s;
+int maxim(int a, int b) {
+    if(a>b) return a;
+    if(a==b) return a+1; //sa avem unde pune carry-ul daca ambele au aceeasi marime
+    return b;
+}
+int getSize(const char * str) {
+    int i=0;
+    while(str[i]!='\0') i++;
+    return i;
 }
 char * Math::Add(const char *str1, const char *str2) {
-    if(str1==nullptr || str2==nullptr) return nullptr;
-    int n1=0, n2=0;
-    int i1=0, i2=0;
-    while(str1[i1]!='\0') {
-        n1 = n1*10 + (str1[i1]-'0');
-        i1++;
+    if(!(str1 && str2)) return nullptr;
+    int a = getSize(str1), b = getSize(str2);
+    int mx = maxim(a, b);
+    int carry = 0;
+    char* res = new char[mx+1];
+    res[mx] = '\0';
+    int i = a-1, j = b-1, k = mx-1;
+    while(i>=0 || j>=0 || carry) {
+        int digit1 = (i>=0) ? (str1[i]-'0') : 0;
+        int digit2 = (j>=0) ? (str2[j]-'0') : 0;
+        int sum = digit1 + digit2 + carry;
+        res[k] = sum%10+'0';
+        carry = sum/10;
+        k--; i--; j--;
     }
-    while(str2[i2]!='\0') {
-        n2 = n2*10 + (str2[i2]-'0');
-        i2++;
+    if(carry) {
+        res[0] = carry;
+        return res;
     }
-    int n = n1+n2;
-    char* res = (char*)malloc(getSize(n)+1);
-    if(!res) return nullptr;
-    res[getSize(n)] = '\0';
-    for(int i=getSize(n)-1; i>=0; i--) {
-        int digit =  n%10;
-        res[i] = (digit+'0');
-        n/=10;
+    else {
+        return res+1;
     }
-    return res;
 }
 //1234512
 
