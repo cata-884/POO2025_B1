@@ -49,6 +49,7 @@ Sort::Sort(int count, ...) {
     for(int i=0; i<count; i++) {
         v.push_back(va_arg(args, int));
     }
+    va_end(args);
 }
 
 void Sort::InsertSort(bool ascendent) {
