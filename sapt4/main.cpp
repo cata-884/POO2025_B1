@@ -36,7 +36,7 @@ int main() {
     s7.Print();
 
     Sort s8 = s7;
-    std::cout<<"\ncopy constructor list:\n";
+    std::cout<<"\ncopy constructor list(intital era copy constructor, iar acum '=' operator test):\n";
     s8.Print();
 
     Sort s9 = s6 + s5;
