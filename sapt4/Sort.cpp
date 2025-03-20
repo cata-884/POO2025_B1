@@ -57,10 +57,6 @@ Sort::Sort(Sort &obj) { //copy
     v = obj.v;
 }
 
-Sort::Sort() {
-
-}
-
 void Sort::InsertSort(bool ascendent) {
     for (int i = 1; i < v.size(); ++i) {
         int key = v[i];
