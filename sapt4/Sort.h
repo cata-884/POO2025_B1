@@ -19,7 +19,6 @@ public:
     Sort(int count, ...);
     Sort(Sort&& obj); //move
     Sort(Sort& obj); //copy
-    Sort(); //empty
 
     void InsertSort(bool ascendent=false);
     void QuickSort(bool ascendent=false, int low = 0, int high = 0);
