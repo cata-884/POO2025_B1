@@ -124,6 +124,10 @@ int Sort::GetElementsCount() {
 
 int Sort::GetElementFromIndex(int index) {
     if(index>=0 && index<v.size()) return v[index];
+    else {
+        std::cout<<"index invalid la apelul functiei GetElementFromIndex\n";
+        return -1;
+    }
 }
 
 Sort Sort::operator+(Sort const &obj) { //optional
