@@ -1,0 +1,13 @@
+#include <iostream>
+float operator _Kelvin(unsigned long long x) {
+    return static_cast<float>(x+273);
+}
+float operator _Fahrenheit(unsigned long long x) {
+    return static_cast<float>((9*x/5+32));
+}
+int main() {
+    float a = 300_Kelvin;
+    float b = 120_Fahrenheit;
+    printf(%f %f, a, b);
+    return 0;
+}
