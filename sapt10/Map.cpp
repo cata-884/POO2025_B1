@@ -74,7 +74,7 @@ bool Map<T1, T2>::Delete(const T1 &key) {
         elements[poz] = elements[poz+1];
         poz++;
     }
-
+    cnt--;
 }
 
 template<typename T1, typename T2>
