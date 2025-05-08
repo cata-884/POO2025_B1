@@ -83,7 +83,7 @@ bool Map<T1, T2>::Includes(const Map<T1, T2> &map) {
     int ceva = sz;
     for(int i=0; i<sz && !ceva; i++) {
         for(int j=0; j<cnt && !ceva; j++) {
-            if(map.elements[i].key == elements[j].key && map.elements[i].key == elements[j].key) {
+            if(map.elements[i].key == elements[j].key && map.elements[i].value == elements[j].value) {
                 ceva--;
             }
         }
