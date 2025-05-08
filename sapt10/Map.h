@@ -21,7 +21,12 @@ public:
     Map();
     ~Map();
     T2& operator[](T1 key);
-
+    void Set(T1 key, T2 value);
+    bool Get(const T1& key, T2& value);
+    int Count();
+    void Clear();
+    bool Delete(const T1& key);
+    bool Includes(const Map<T1,T2>& map);
     struct Iterator {
         Pair<T1, T2>* ptr;
         int index;
