@@ -4,16 +4,17 @@
 #include<fstream>
 #include<queue>
 #include<map>
-void htol(std::string& mesaj) {
+using namespace std;
+void htol(string& mesaj) {
     for(int i=0; i<mesaj.size(); i++) {
         if(mesaj[i]>='A' && mesaj[i]<='Z') {
             mesaj[i] = mesaj[i]-'A'+'a';
         }
     }
 }
-std::vector<std::string> cuvinte(std::string& mesaj) {
-    std::string cuv_pot;
-    std::vector<std::string> res;
+vector<string> cuvinte(string& mesaj) {
+    string cuv_pot;
+    vector<string> res;
     for(int i=0; i<mesaj.size(); i++) {
         while(mesaj[i] == ' ' && i<mesaj.size() && i+1<mesaj.size() && mesaj[i+1] == ' ') i++;
         if(mesaj[i] == ',' || mesaj[i] == '.' || mesaj[i] == '?' || mesaj[i] == '!' || mesaj[i] == ' ') {
@@ -31,18 +32,18 @@ std::vector<std::string> cuvinte(std::string& mesaj) {
     return res;
 }
 struct comp {
-    bool operator()(std::pair<std::string, int> &str1, std::pair<std::string, int> &str2) {
+    bool operator()(pair<string, int> &str1, pair<string, int> &str2) {
         if(str1.second == str2.second) return str1.first[0] > str2.first[0];
         return str1.second < str2.second;
     }
 };
 int main() {
-    std::string mesaj;
-    std::map<std::string, int> mp;
-    std::priority_queue<std::pair<std::string, int>, std::vector<std::pair<std::string, int>>, comp> pq;
-    std::getline(std::cin, mesaj);
+    string mesaj;
+    map<string, int> mp;
+    priority_queue<pair<string, int>, vector<pair<string, int>>, comp> pq;
+    getline(cin, mesaj);
     htol(mesaj);
-    std::vector<std::string> cuvint = cuvinte(mesaj);
+    vector<string> cuvint = cuvinte(mesaj);
     for(int i=0; i<cuvint.size(); i++) {
         mp[cuvint[i]]++;
     }
@@ -50,9 +51,9 @@ int main() {
         pq.push({it->first, it->second});
     }
     while(!pq.empty()) {
-        std::cout<<pq.top().first<<" => "<<pq.top().second;
+        cout<<pq.top().first<<" => "<<pq.top().second;
         pq.pop();
-        std::cout<<"\n";
+        cout<<"\n";
     }
     return 0;
 }
