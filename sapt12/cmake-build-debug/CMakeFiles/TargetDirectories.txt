@@ -1,0 +1,3 @@
+/home/cata-884/CLionProjects/sapt11/cmake-build-debug/CMakeFiles/sapt11.dir
+/home/cata-884/CLionProjects/sapt11/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cata-884/CLionProjects/sapt11/cmake-build-debug/CMakeFiles/rebuild_cache.dir
