@@ -1,0 +1,3 @@
+/home/cata-884/oop-tests/catalog/cmake-build-debug/CMakeFiles/catalog.dir
+/home/cata-884/oop-tests/catalog/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cata-884/oop-tests/catalog/cmake-build-debug/CMakeFiles/rebuild_cache.dir
